@@ -10,7 +10,7 @@ sampfle <- function(x, size, prob=NULL)
                 as.double(prob), PACKAGE="sampfling")]
 }
 
-samprop <- function(x, size, prob)
+samprop <- function(x, size, prob=NULL)
   {
     single <- length(x)==1 && x>=1
     L <- ifelse(single, x, length(x))
