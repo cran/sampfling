@@ -4,10 +4,10 @@ sampfle <- function(x, size, prob=NULL)
 {
   if(length(x) == 1 && x >= 1) 
     .External("sampfle", as.integer(x), as.integer(size),
-              as.double(prob))
+              as.double(prob), PACKAGE="sampfling")
   else 
     x[.External("sampfle", as.integer(length(x)), as.integer(size),
-                as.double(prob))]
+                as.double(prob), PACKAGE="sampfling")]
 }
 
 samprop <- function(x, size, prob)
@@ -26,7 +26,7 @@ samprop <- function(x, size, prob)
     repeat
       {
         s <- .External("sampfle", as.integer(L), as.integer(size),
-                       as.double(prob))
+                       as.double(prob), PACKAGE="sampfling")
         if (runif(1,0,bound) < correction(s)) break
       }
     if (single)

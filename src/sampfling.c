@@ -23,6 +23,8 @@
 #include <config.h>
 #endif
 
+#include <search.h>
+
 #include <Rinternals.h>
 #include <R_ext/Random.h>
 #include <Rmath.h> /* for rxxx functions, MATH_CHECK  */
@@ -67,7 +69,8 @@ static void ProbSampleSampford(int n, double *p, int *perm,
 			       int nans, int *ans)
 {
     double random, mass, totalmass;
-    int i, j, k, nm1=n-1, result, nmemb;
+    int i, j, nm1=n-1, result;
+    unsigned int nmemb;
     double *p2 = (double *) malloc (n*sizeof(double));
     
     /* Record element identities */
@@ -101,8 +104,8 @@ static void ProbSampleSampford(int n, double *p, int *perm,
 		    break;
 	    }
 	    nmemb = i;
-	    result = lsearch (&perm[j], ans, &nmemb, 
-			      sizeof(int), compare_integers);
+	    result = (int) lsearch (&perm[j], ans, &nmemb, 
+				    sizeof(int), compare_integers);
 	    if (nmemb == i) break;
 	}
     } while (i < nans);
