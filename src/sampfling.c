@@ -69,9 +69,10 @@ static void ProbSampleSampford(int n, double *p, int *perm,
 			       int nans, int *ans)
 {
     double random, mass, totalmass;
-    int i, j, nm1=n-1, result;
-    unsigned int nmemb;
-    double *p2 = (double *) malloc (n*sizeof(double));
+    int i, j, nm1=n-1;
+    size_t nmemb;
+    //double *p2 = (double *) malloc (n*sizeof(double));
+    double p2[n];
     
     /* Record element identities */
     for (i = 0; i < n; i++) 
@@ -104,8 +105,8 @@ static void ProbSampleSampford(int n, double *p, int *perm,
 		    break;
 	    }
 	    nmemb = i;
-	    result = (int) lsearch (&perm[j], ans, &nmemb, 
-				    sizeof(int), compare_integers);
+	    lsearch(&perm[j], ans, &nmemb, 
+		    sizeof(int), compare_integers);
 	    if (nmemb == i) break;
 	}
     } while (i < nans);

@@ -1,0 +1,10 @@
+819c8e28c806c8d4e2f84f99026cab0a *DESCRIPTION
+787acee0806d077ac9c11fdfbc67f382 *INDEX
+9fdfeb11f7ddba6f3aab9aaa6b1ac5dd *NAMESPACE
+15cccd8b101210aee0ab7fb614580b63 *R/sampfling.R
+6c3dbc64faef08d5db2ebc786a0dbbf0 *R/zzz.R
+fe3d304f009b8224093b2ed77bc15862 *man/sampfle.Rd
+a6a6509202be91003db9cab42c894b78 *man/samprop.Rd
+5d3dfd299e15a8c9ec1704da2e1a4511 *src/sampfling.c
+01c473d9a00b2aa774c2a438ca5d5713 *tests/sampfle.R
+fff2e5b521929bf10fcce654bbed8cfb *tests/samprop.R
